@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sijil Digital Penghargaan - Cikgu Anna</title>
+<style>
+:root{--navy:#23305f;--purple:#7253a6;--gold:#d9ad4b;--ink:#28304a;--muted:#65708b;--paper:#fffdf8}
+*{box-sizing:border-box}
+body{margin:0;padding:24px;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#f1edff,#fff7e5);color:var(--ink)}
+.wrapper{max-width:1080px;margin:0 auto}
+.intro{text-align:center;margin:0 auto 22px;max-width:760px}
+.intro h1{margin:0 0 8px;color:var(--navy);font-size:clamp(24px,4vw,34px)}
+.intro p{margin:0;color:#555f7b;line-height:1.5}
+.panel{background:#fff;border:1px solid #e5def7;border-radius:18px;padding:18px 20px;margin-bottom:22px;box-shadow:0 8px 24px #3d2a6810;display:flex;gap:12px;align-items:end;flex-wrap:wrap}
+.field{flex:1;min-width:220px}
+.field label{display:block;font-weight:700;margin-bottom:7px;color:var(--navy)}
+.field input{width:100%;font-size:16px;padding:12px 13px;border:1.5px solid #cfc5e9;border-radius:10px;outline:none}
+.field input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #7253a620}
+.btn{border:0;border-radius:10px;padding:13px 18px;font-weight:700;font-size:15px;cursor:pointer;background:var(--navy);color:white;min-height:46px}
+.btn:hover{background:#354681}.btn:disabled{opacity:.7;cursor:wait}.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.hint{font-size:12px;color:var(--muted);width:100%;margin:0;line-height:1.5}
+.certificate{position:relative;overflow:hidden;background:var(--paper);aspect-ratio:1.414/1;width:100%;padding:clamp(18px,4.2vw,54px);box-shadow:0 18px 45px #2e245020;border:12px double var(--gold);outline:1px solid #e8d8a8;outline-offset:-20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:480px}
+.certificate:before,.certificate:after{content:'✦';position:absolute;color:#e8d7a3;font-size:42px;opacity:.75}.certificate:before{top:20px;left:26px}.certificate:after{right:26px;bottom:20px}
+.topline{font-size:clamp(11px,1.4vw,15px);letter-spacing:4px;text-transform:uppercase;color:var(--purple);font-weight:700}
+.medal{font-size:clamp(28px,4vw,44px);margin:10px 0 4px}
+.title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(32px,5.5vw,58px);line-height:1.05;color:var(--navy);margin:0 0 8px}
+.subtitle{font-size:clamp(12px,1.7vw,17px);color:var(--muted);margin:4px 0 12px}
+.presented{font-size:clamp(12px,1.6vw,16px);margin:4px 0;color:#4d5672}
+.student{font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,4vw,40px);font-weight:bold;color:var(--purple);border-bottom:2px solid #d9c9ed;min-width:48%;padding:4px 18px 8px;margin:5px 0 13px;overflow-wrap:anywhere}
+.achievement{font-size:clamp(12px,1.65vw,17px);line-height:1.55;max-width:760px;margin:0 auto;color:#414a65}.topic{font-weight:700;color:var(--navy)}
+.bottom{display:flex;align-items:end;justify-content:space-between;gap:24px;width:88%;margin-top:clamp(18px,3vw,35px)}
+.signature{min-width:150px;font-size:12px;color:var(--muted);border-top:1px solid #aeb4c8;padding-top:8px}.signature strong{display:block;font-size:14px;color:var(--navy);margin-bottom:3px}
+.seal{width:72px;height:72px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:28px;flex-shrink:0}
+.date{font-size:12px;color:var(--muted);margin-top:8px}.footer-note{text-align:center;font-size:12px;color:#66708a;margin:14px 0 0}
+@media(max-width:600px){body{padding:12px}.certificate{aspect-ratio:auto;min-height:500px;padding:32px 20px;border-width:8px;outline-offset:-14px}.bottom{width:100%;gap:10px}.signature{min-width:0;flex:1}.seal{width:54px;height:54px;font-size:22px}.topline{letter-spacing:2px}}
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{width:297mm;height:210mm;margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body *{visibility:hidden!important}
+  #certificate,#certificate *{visibility:visible!important}
+  #certificate{position:absolute!important;left:0!important;top:0!important;width:297mm!important;height:210mm!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;padding:16mm 20mm!important;box-shadow:none!important;border-width:12px!important;outline-offset:-20px!important;overflow:hidden!important}
+  .title{font-size:48pt!important}.student{font-size:32pt!important}.subtitle,.presented,.achievement{font-size:13pt!important}.topline{font-size:11pt!important}.bottom{margin-top:20px!important}.medal{font-size:32pt!important}
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <header class="intro">
+    <h1>🎓 Sijil Digital Penghargaan</h1>
+    <p>Taip nama murid di ruangan bawah. Nama pada sijil akan dikemas kini secara automatik.</p>
+  </header>
+  <section class="panel" aria-label="Tetapan sijil">
+    <div class="field">
+      <label for="studentName">Nama murid</label>
+      <input id="studentName" type="text" maxlength="70" placeholder="Taip nama penuh murid di sini" autocomplete="name">
+    </div>
+    <p class="hint">Nama pada sijil akan berubah secara automatik apabila anda menaip.</p>
+  </section>
+  <main class="certificate" id="certificate" aria-label="Pratonton sijil digital">
+    <div class="topline">Penghargaan Pembelajaran</div>
+    <div class="medal">🏅</div>
+    <h2 class="title">Sijil Pencapaian</h2>
+    <p class="subtitle">Dianugerahkan dengan penuh penghargaan kepada</p>
+    <div class="student" id="displayName">Nama Murid</div>
+    <p class="presented">sebagai tanda penghargaan atas usaha dan kesungguhan</p>
+    <p class="achievement">menyertai aktiviti pembelajaran dan menunjukkan semangat untuk memahami<br><span class="topic">Bentuk Prisma dan Bukan Prisma</span>.</p>
+    <div class="bottom">
+      <div class="signature"><strong>Cikgu Anna</strong>Guru Matematik</div>
+      <div class="seal" aria-hidden="true">✦</div>
+      <div class="signature"><strong id="dateText">23 Oktober 2026</strong>Tarikh</div>
+    </div>
+  </main>
+  <p class="footer-note">Tahniah, murid-murid! Teruskan usaha dan semangat untuk belajar. ✨</p>
+</div>
+<script>
+(function(){
+  'use strict';
+  const input = document.getElementById('studentName');
+  const display = document.getElementById('displayName');
+  const dateText = document.getElementById('dateText');
+
+  dateText.textContent = new Intl.DateTimeFormat('ms-MY', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  }).format(new Date());
+
+  input.addEventListener('input', function(){
+    display.textContent = input.value.trim() || 'Nama Murid';
+  });
+})();
+</script>
+</body>
+</html>
